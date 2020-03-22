@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "result": {
+    "id": 2345678,
+    "is_bot": true,
+    "first_name": "Teluino",
+    "username": "teluino_o_bot",
+    "can_join_groups": false,
+    "can_read_all_group_messages": false,
+    "supports_inline_queries": false
+  }
+}

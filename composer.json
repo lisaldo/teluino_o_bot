@@ -1,0 +1,25 @@
+{
+    "name": "lisaldo/teluino",
+    "description": "Um bot do telegram pra brincar com meu arduino",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Teluino\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Teluino\\UnitTest\\": "test/unit",
+            "Teluino\\IntegrationTest\\": "test/integration"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "require": {
+        "symfony/dotenv": "^5.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.5"
+    }
+}

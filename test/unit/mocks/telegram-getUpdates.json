@@ -1,0 +1,51 @@
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 342323232,
+      "message": {
+        "message_id": 11,
+        "from": {
+          "id": 43242342234,
+          "is_bot": false,
+          "first_name": "Fulano",
+          "last_name": "de Tal",
+          "username": "fulaninho",
+          "language_code": "en"
+        },
+        "chat": {
+          "id": 123333,
+          "first_name": "Fulano",
+          "last_name": "de Tal",
+          "username": "fulaninho",
+          "type": "private"
+        },
+        "date": 1584826385,
+        "text": "Turn light on"
+      }
+    },
+    {
+      "update_id": 123123123,
+      "message": {
+        "message_id": 12,
+        "from": {
+          "id": 123123122,
+          "is_bot": false,
+          "first_name": "Fulano",
+          "last_name": "de Tal",
+          "username": "fulaninho",
+          "language_code": "en"
+        },
+        "chat": {
+          "id": 1231231234,
+          "first_name": "Fulano",
+          "last_name": "de Tal",
+          "username": "fulaninho",
+          "type": "private"
+        },
+        "date": 1584826406,
+        "text": "turn light off"
+      }
+    }
+  ]
+}

@@ -16,7 +16,7 @@ class TelegramTest extends TestCase
 
     public function setUp(): void
     {
-        $this->telegramToken = $_ENV['TELEGRAM_TOKEN'];
+        $this->telegramToken = getenv('TELEGRAM_TOKEN');
         $this->telegram = new Telegram($this->telegramToken);
     }
 

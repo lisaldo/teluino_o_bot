@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Teluino\Chat\Telegram;
 
-class User
+final class User
 {
     private string $username;
     private string $firstname;

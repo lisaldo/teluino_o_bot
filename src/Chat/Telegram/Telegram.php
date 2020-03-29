@@ -6,7 +6,7 @@ namespace Teluino\Chat\Telegram;
 
 use Teluino\Connection\Request;
 
-class Telegram
+final class Telegram
 {
     private const TELEGRAM_URL = 'https://api.telegram.org/bot';
 

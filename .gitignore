@@ -2,3 +2,4 @@ vendor/
 .env
 nbproject
 .phpunit.result.cache
+coverage.xml

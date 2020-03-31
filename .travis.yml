@@ -1,0 +1,17 @@
+language: php
+
+dist: bionic
+
+php:
+  - 7.4
+
+before_install:
+  - composer self-update
+  - composer clear-cache
+  - cp .env.example .env
+
+install:
+  - composer install
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover=coverage.xml

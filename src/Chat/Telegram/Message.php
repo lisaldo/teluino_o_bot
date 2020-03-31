@@ -10,6 +10,7 @@ use Teluino\Connection\Request;
 final class Message
 {
     private ?DateTimeImmutable $dateSentMessage = null;
+    private ?User $user = null;
     private array $originalMessage;
 
     public function __construct(array $messageArray)
@@ -29,5 +30,14 @@ final class Message
         }
 
         return $this->dateSentMessage;
+    }
+
+    public function getWhoSent(): User
+    {
+        if (! $this->user) {
+            $this->user = new User($this->originalMessage['from']);
+        }
+
+        return $this->user;
     }
 }

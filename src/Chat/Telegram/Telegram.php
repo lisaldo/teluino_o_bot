@@ -28,6 +28,8 @@ final class Telegram
     {
         $json = $request->get($this->getEndpoint('getMe'));
 
-        return new User($json);
+        $userArray = json_decode($json, true);
+
+        return new User($userArray['result']);
     }
 }

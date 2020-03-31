@@ -8,12 +8,15 @@ final class User
 {
     private string $username;
     private string $firstname;
+    private bool $bot;
+    private int $id;
 
-    public function __construct(string $userJson)
+    public function __construct(array $userArray)
     {
-        $user = json_decode($userJson, true);
-        $this->username = $user['result']['username'] ?? '';
-        $this->firstname = $user['result']['first_name'] ?? '';
+        $this->username = $userArray['username'];
+        $this->firstname = $userArray['first_name'] ?? '';
+        $this->bot = $userArray['is_bot'] ?? false;
+        $this->id = $userArray['id'] ?? 0;
     }
 
     public function username(): string
@@ -24,5 +27,15 @@ final class User
     public function firstname(): string
     {
         return $this->firstname;
+    }
+
+    public function itsABot(): bool
+    {
+        return $this->bot;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 }

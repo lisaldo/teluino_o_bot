@@ -17,8 +17,6 @@ class Request
 
     public function get(string $link): string
     {
-        $response = $this->guzzleRequest->get($link);
-
-        return $response->body();
+        return '';
     }
 }

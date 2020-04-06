@@ -12,7 +12,7 @@ class TelegramUpdateTest extends TestCase
     /**
       * @dataProvider get_fake_data()
       */
-    public function test_can_get_initializa_update(array $updateArray)
+    public function test_can_get_update_id(array $updateArray): void
     {
         $updateId = $updateArray['update_id'];
         $update = new Update($updateArray);

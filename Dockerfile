@@ -1,6 +1,10 @@
 FROM php:7.4-alpine
 
 RUN apk update \
-    && apk add composer 
+    && apk add composer bash make
 
-RUN mkdir /app && chmod a+w -R /app
+RUN adduser teluino -DH -u 1000 -s /bin/bash
+
+RUN mkdir /app && chown -R teluino.teluino /app
+
+EXPOSE 8095

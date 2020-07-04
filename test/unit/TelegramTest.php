@@ -4,12 +4,12 @@ declare(strict_types = 1);
 
 namespace Teluino\UnitTest;
 
-use Teluino\Connection\Request;
+use PHPUnit\Framework\TestCase;
 use Teluino\Chat\Telegram\Telegram;
 use Teluino\Chat\Telegram\User;
-use PHPUnit\Framework\TestCase;
+use Teluino\Connection\Request;
 
-class TelegramTest extends TestCase
+final class TelegramTest extends TestCase
 {
     private string $telegramToken;
     private Telegram $telegram;

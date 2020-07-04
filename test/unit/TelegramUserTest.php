@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Teluino\UnitTest;
 
-use Teluino\Chat\Telegram\User;
 use PHPUnit\Framework\TestCase;
+use Teluino\Chat\Telegram\User;
 
-class TelegramUserTest extends TestCase
+final class TelegramUserTest extends TestCase
 {
     private static string $baseJson = '';
     private array $userArray = [];
@@ -25,7 +25,6 @@ class TelegramUserTest extends TestCase
 
     public function test_get_bot_username(): void
     {
-
         $user = new User($this->userArray);
 
         $this->assertSame('teluino_o_bot', $user->username());

@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace Teluino\Chat\Telegram;
 
-use Teluino\Connection\Request;
-
 final class Update
 {
     private array $originalValues;

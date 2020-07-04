@@ -14,9 +14,9 @@ install:
   - composer install
 
 script:
-  - ./vendor/bin/phpunit --coverage-clover=coverage.xml --testsuite unit_test
+  - ./vendor/bin/php-cs-fixer --allow-risky=yes --stop-on-violation --verbose --dry-run fix
   - ./vendor/bin/phpstan analyse -c phpstan.neon
-  - ./vendor/bin/php-cs-fixer --stop-on-violation --verbose --dry-run fix
+  - ./vendor/bin/phpunit --coverage-clover=coverage.xml --testsuite unit_test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

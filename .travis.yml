@@ -16,6 +16,7 @@ install:
 script:
   - ./vendor/bin/phpunit --coverage-clover=coverage.xml --testsuite unit_test
   - ./vendor/bin/phpstan analyse -c phpstan.neon
+  - ./vendor/bin/php-cs-fixer --stop-on-violation --verbose --dry-run fix
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

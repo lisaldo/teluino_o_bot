@@ -1,0 +1,27 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude(['config', 'vendor'])
+    ->in([__DIR__ . '/src', __DIR__ . '/test']);
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR1' => true,
+        '@PSR2' => true,
+        '@PhpCsFixer' => true,
+        'align_multiline_comment' => true,
+        'array_indentation' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_before_statement' => true,
+        'concat_space' => ['spacing' => 'one'],
+        'declare_equal_normalize' => ['space' => 'single'],
+        'declare_strict_types' => true,
+        'final_class' => true,
+        'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
+        'php_unit_internal_class' => false,
+        'php_unit_method_casing' => ['case' => 'snake_case'],
+        'php_unit_test_class_requires_covers' => false,
+        'psr4' => true,
+        'not_operator_with_successor_space' => true,
+    ])
+    ->setFinder($finder);

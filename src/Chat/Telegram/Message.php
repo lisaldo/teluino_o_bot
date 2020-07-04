@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace Teluino\Chat\Telegram;
 
 use DateTimeImmutable;
-use Teluino\Connection\Request;
 
 final class Message
 {

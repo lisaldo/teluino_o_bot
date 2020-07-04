@@ -4,11 +4,11 @@ declare(strict_types = 1);
 
 namespace Teluino\UnitTest;
 
+use PHPUnit\Framework\TestCase;
 use Teluino\Chat\Telegram\Message;
 use Teluino\Chat\Telegram\User;
-use PHPUnit\Framework\TestCase;
 
-class TelegramMessageTest extends TestCase
+final class TelegramMessageTest extends TestCase
 {
     private static array $originalMessage;
 
@@ -30,7 +30,7 @@ class TelegramMessageTest extends TestCase
     {
         $messageId = self::$originalMessage['message_id'];
 
-       $this->assertSame($this->message->getId(), $messageId, 'Falha ao comparar o valor identificador da mensagem');
+        $this->assertSame($this->message->getId(), $messageId, 'Falha ao comparar o valor identificador da mensagem');
     }
 
     public function test_can_get_sent_date(): void

@@ -6,6 +6,7 @@ namespace Teluino\UnitTest;
 
 use PHPUnit\Framework\TestCase;
 use Teluino\Chat\Telegram\Telegram;
+use Teluino\Chat\Telegram\Update;
 use Teluino\Chat\Telegram\User;
 use Teluino\Connection\Request;
 
@@ -37,5 +38,19 @@ final class TelegramTest extends TestCase
 
         $this->assertSame(User::class, get_class($me));
         $this->assertSame('teluino_o_bot', $me->username());
+    }
+
+    public function test_can_get_updates()
+    {
+        $connectionStub = $this->createStub(Request::class);
+        $connectionStub->method('get')
+            ->willReturn(file_get_contents(__DIR__ . '/mocks/telegram-getUpdates.json'));
+
+        $updates = $this->telegram->getUpdates($connectionStub);
+
+        $this->assertSame(2, count($updates));
+        foreach ($updates as $update) {
+            $this->assertInstanceOf(Update::class, $update);
+        }
     }
 }

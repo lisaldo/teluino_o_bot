@@ -32,4 +32,15 @@ final class Telegram
 
         return new User($userArray['result']);
     }
+
+    public function getUpdates(Request $request)
+    {
+        $json = $request->get($this->getEndpoint('getUpdates'));
+
+        $updates = json_decode($json, true);
+
+        return array_map(function ($update) {
+            return new Update($update);
+        }, $updates['result']);
+    }
 }

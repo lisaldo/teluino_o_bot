@@ -22,4 +22,8 @@
                 <directory suffix=".php">src</directory>
             </whitelist>
         </filter>
+        <php>
+            <env name="APP_ENV" value="testing"/>
+            <env name="DATABASE_FILE" value="/app/database/telegram_test.db"/>
+        </php>
 </phpunit>

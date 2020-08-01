@@ -1,5 +1,8 @@
 IMAGE_NAME=teluino_o_bot
 
+init:
+	cd database && sqlite3 telegram.db < teluino.sql
+
 image:
 	docker build -t $(IMAGE_NAME) .
 
@@ -9,5 +12,10 @@ login: image
 fix:
 	./vendor/bin/php-cs-fixer --verbose --diff --allow-risky=yes fix
 
-teste:
+unit:
 	./vendor/bin/phpunit --testsuite unit_test
+
+integration:
+	./vendor/bin/phpunit --testsuite integration_test
+
+teste: unit integration
